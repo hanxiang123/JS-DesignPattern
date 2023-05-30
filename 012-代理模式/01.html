@@ -1,0 +1,41 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+       class Star{
+           play(){
+               console.log("演戏")
+           }
+       }
+
+       class StarProxy{
+           constructor(){
+            this.superStar = new Star()
+           }
+
+           talk(price){
+            if(price>=10000){
+                this.superStar.play()
+            }else{
+                throw new Error("价钱不合适")
+            }
+           }
+       }
+
+       let jr = new StarProxy()
+       jr.talk(10000)
+    </script>
+</body>
+
+</html>

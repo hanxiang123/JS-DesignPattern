@@ -1,0 +1,40 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //publish 发布
+        //subscribe 订阅
+        const PubSub = {
+            list:[],
+            publish(){
+                this.list.forEach(item=>item())
+            },  
+            subscribe(cb){
+                this.list.push(cb)
+            }
+        }
+
+        function testA(){
+            console.log("testA")
+        }
+
+        function testB(){
+            console.log("testB")
+        }
+
+        PubSub.subscribe(testA)
+        PubSub.subscribe(testB)
+
+
+        PubSub.publish()
+    </script>
+</body>
+</html>

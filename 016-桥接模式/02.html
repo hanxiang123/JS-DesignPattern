@@ -1,0 +1,72 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //modal
+        //message
+        //toast
+
+        //bounce
+        //slide
+        //rotate
+
+        const Aniations = {
+            bounce:{
+                show(ele){
+                    console.log(ele,"弹跳显示")
+                },
+                hide(ele){
+                    console.log(ele,"弹跳隐藏")
+                }
+            },
+            slide:{
+                show(ele){
+                    console.log(ele,"滑动显示")
+                },
+                hide(ele){
+                    console.log(ele,"滑动隐藏")
+                }
+            },
+            rotate:{
+                show(ele){
+                    console.log(ele,"旋转显示")
+                },
+                hide(ele){
+                    console.log(ele,"旋转隐藏")
+                }
+            }
+        }
+
+        function Toast(ele,animation){
+            this.ele = ele
+            this.animation = animation
+        }
+
+        Toast.prototype.show = function(){
+            //抽象
+            this.animation.show(this.ele)
+        }
+
+        Toast.prototype.hide = function(){
+            //抽象
+            this.animation.hide(this.ele)
+        }
+
+        let toast1= new Toast("div1",Aniations.rotate)
+
+        toast1.show()
+
+        setTimeout(()=>{
+            toast1.hide()
+        },1000)
+    </script>
+</body>
+</html>

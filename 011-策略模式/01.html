@@ -1,0 +1,43 @@
+<!--
+ * @作者: kerwin
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+
+      let strategry = {
+          "S":(salary)=>{
+              return salary*6
+          },
+          "A":(salary)=>{
+              return salary*4
+          },
+          "B":(salary)=>{
+              return salary*3
+          },
+          "C":(salary)=>{
+              return salary*2
+          }
+      }
+
+
+       function calBonus(level,salary){
+           
+           return strategry[level](salary)
+       }
+
+       calBonus("A",10000)
+       calBonus("C",8000)
+    </script>
+</body>
+
+</html>

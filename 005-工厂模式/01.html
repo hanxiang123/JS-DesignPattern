@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function UserFactory(role) {
+            function User(role, pages) {
+                this.role = role
+                this.pages = pages
+            }
+            switch (role) {
+                case "superadmin":
+                    return new User("superadmin", ["home", "user-manage", "right-manage", "news-manage"])
+                    break;
+                case "admin":
+                    return new User("admin", ["home", "user-manage", "news-manage"])
+                    break;
+                case "editor":
+                    return new User("editor", ["home", "news-manage"])
+                    break;
+                default:
+                    throw new Error("参数错误")
+            }
+        }
+
+        var user = UserFactory("editor")
+    </script>
+</body>
+
+</html>

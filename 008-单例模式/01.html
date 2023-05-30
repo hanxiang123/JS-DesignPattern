@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Singleton = (function(){
+            var instance 
+
+            function User(name,age){
+                this.name = name
+                this.age = age
+            }
+
+            return function(name,age){
+                if(!instance){
+                    //创建实例
+                    instance = new User(name,age)
+                }
+                return instance
+            }
+        })()
+
+        
+    </script>
+</body>
+</html>
