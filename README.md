@@ -570,7 +570,7 @@ setTimeout(() => {
 >1.观察者和目标要相互知道
 >2.发布者和订阅者不用互相知道，通过第三方实现调度，属于经过解耦合的观察者模式
 
-<img src="%E7%AC%94%E8%AE%B0.assets/image-20221031101039497.png" alt="image-20221031101039497" style="zoom:50%;float:left;" />
+<img src="images/image-20221031101039497.png" alt="image-20221031101039497" style="zoom:50%;float:left;" />
 
 ```js
  class SubPub {
