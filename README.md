@@ -1,17 +1,6 @@
 [toc]
 
 # JS设计模式
-
-​			作者：kerwin   
-
-​			版本：QF1.0
-
-​			版权：千锋HTML5大前端教研院
-
-​			公众号: 大前端私房菜
-
-
-
 #### 一. 设计模式介绍
 
 - 设计模式是我们在 解决问题的时候针对特定问题给出的简洁而优化的处理方案
@@ -73,9 +62,7 @@ new Employee("tiechui",18)
 **案例**
 
 ```html
-<!--
- * @作者: kerwin
--->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -542,9 +529,7 @@ renderMap(new BaiduMapAdapter());
 
 
 ```html
-<!--
- * @作者: kerwin
--->
+
 <!DOCTYPE html>
 <html lang="en">
 
