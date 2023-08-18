@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,40 +10,48 @@
 
 <body>
     <script>
-       Function.prototype.before= function(beforeFn){
+        Function.prototype.before = function (beforeFn) {
             var _this = this
-            return function(){
+            // 这里的 this 指的是 调用before函数的实例（test）
+            return function () {
+                // 这里的this 指的是调用return出去的这个function的调用者，这里指window，因为最后是window调用的
                 //先进行前置函数调用
-                beforeFn.apply(this,arguments)
-                //执行原来的函数
-                return _this.apply(this,arguments)
-            }
-       }
+                beforeFn.apply(this, arguments)
 
-       Function.prototype.after= function(afterFn){
+                //执行原来的函数
+                return _this.apply(this, arguments)
+            }
+        }
+
+        Function.prototype.after = function (afterFn) {
             var _this = this
-            return function(){
-                var result = _this.apply(this,arguments)
+            return function () {
+                // 在这一步去调用 16-23 整段代码的 function
+                var result = _this.apply(this, arguments)
                 //先进行前置函数调用
-                afterFn.apply(this,arguments)
+                afterFn.apply(this, arguments)
                 //执行原来的函数
                 return result
             }
-       }
+        }
 
-       function test(){
-           console.log("1111111")
-           return 111111
-       }
+        function test() {
+            console.log("1111111-----")
+            return '这是test的返回值'
+        }
 
-       // test  = new Function()
-       var test1 = test.before(function(){
+
+        /**
+         * test.before() 返回的是一个function，执行时间是在after函数中的_this.apply(this, arguments)
+         * 再次调用after返回的也是一个function,
+         */
+        var test1 = test.before(function () {
             console.log("000000")
-       }).after(function(){
-           console.log("222222")
-       })
-
-       test1()
+        })
+            .after(function () {
+                console.log("222222")
+            })
+        test1()
     </script>
 </body>
 
